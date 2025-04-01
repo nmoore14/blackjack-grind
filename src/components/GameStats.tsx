@@ -1,4 +1,5 @@
-import { Hand } from '../lib/game'
+import type { Hand } from '../lib/game'
+import { cn } from '../lib/utils'
 
 interface GameStatsProps {
   hands: Hand[]
@@ -18,55 +19,55 @@ export function GameStats({ hands, bets, payouts }: GameStatsProps) {
   const profit = totalPayout - totalBet
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 space-y-4">
+    <div className="stats-container">
       <h3 className="text-xl font-bold">Session Statistics</h3>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="stats-grid">
         <div>
-          <p className="text-gray-600">Total Hands</p>
-          <p className="text-2xl font-bold">{totalHands}</p>
+          <p className="stats-label">Total Hands</p>
+          <p className="stats-value">{totalHands}</p>
         </div>
         <div>
-          <p className="text-gray-600">Blackjacks</p>
-          <p className="text-2xl font-bold text-green-600">{blackjacks}</p>
+          <p className="stats-label">Blackjacks</p>
+          <p className="stats-value stats-value-success">{blackjacks}</p>
         </div>
         <div>
-          <p className="text-gray-600">Wins</p>
-          <p className="text-2xl font-bold text-green-600">{wins}</p>
+          <p className="stats-label">Wins</p>
+          <p className="stats-value stats-value-success">{wins}</p>
         </div>
         <div>
-          <p className="text-gray-600">Losses</p>
-          <p className="text-2xl font-bold text-red-600">{losses}</p>
+          <p className="stats-label">Losses</p>
+          <p className="stats-value stats-value-error">{losses}</p>
         </div>
         <div>
-          <p className="text-gray-600">Pushes</p>
-          <p className="text-2xl font-bold text-gray-600">{pushes}</p>
+          <p className="stats-label">Pushes</p>
+          <p className="stats-value">{pushes}</p>
         </div>
         <div>
-          <p className="text-gray-600">Win Rate</p>
-          <p className="text-2xl font-bold">
+          <p className="stats-label">Win Rate</p>
+          <p className="stats-value">
             {totalHands > 0 ? ((wins / totalHands) * 100).toFixed(1) : 0}%
           </p>
         </div>
       </div>
-      <div className="border-t pt-4">
-        <div className="grid grid-cols-2 gap-4">
+      <div className="stats-divider">
+        <div className="stats-grid">
           <div>
-            <p className="text-gray-600">Total Bet</p>
-            <p className="text-2xl font-bold">${totalBet}</p>
+            <p className="stats-label">Total Bet</p>
+            <p className="stats-value">${totalBet}</p>
           </div>
           <div>
-            <p className="text-gray-600">Total Payout</p>
-            <p className="text-2xl font-bold">${totalPayout}</p>
+            <p className="stats-label">Total Payout</p>
+            <p className="stats-value">${totalPayout}</p>
           </div>
           <div>
-            <p className="text-gray-600">Profit/Loss</p>
-            <p className={`text-2xl font-bold ${profit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+            <p className="stats-label">Profit/Loss</p>
+            <p className={cn('stats-value', profit >= 0 ? 'stats-value-success' : 'stats-value-error')}>
               ${profit}
             </p>
           </div>
           <div>
-            <p className="text-gray-600">ROI</p>
-            <p className={`text-2xl font-bold ${profit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+            <p className="stats-label">ROI</p>
+            <p className={cn('stats-value', profit >= 0 ? 'stats-value-success' : 'stats-value-error')}>
               {totalBet > 0 ? ((profit / totalBet) * 100).toFixed(1) : 0}%
             </p>
           </div>

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { BookOpen, Brain, Gamepad } from 'lucide-react'
 import { Button } from '../components/Button'
-
+import { FeatureCard } from '../components/FeatureCard'
 const features = [
   {
     name: 'Basic Strategy Guide',
@@ -51,17 +51,14 @@ export function Home() {
         <div className="mt-20">
           <div className="flex flex-wrap justify-center items-center gap-8">
             {features.map((feature) => (
-              <Link
+              <FeatureCard
                 key={feature.name}
-                to={feature.href}
-                className="group relative rounded-lg border border-primary bg-background p-6 transition-all hover:border-accent hover:bg-primary/5 max-w-sm flex-1"
-              >
-                <div className="flex items-center">
-                  <feature.icon className="h-6 w-6 text-primary" />
-                  <h3 className="ml-3 text-lg font-medium text-foreground group-hover:text-accent">{feature.name}</h3>
-                </div>
-                <p className="mt-2 text-sm text-secondary">{feature.description}</p>
-              </Link>
+                title={feature.name}
+                description={feature.description}
+                icon={feature.icon}
+                href={feature.href}
+                tags={[]}
+              />
             ))}
           </div>
         </div>
