@@ -1,74 +1,58 @@
-# TanStack Starter Template
+# BlackJack Grind
 
-This is a simple starter template for a project using [TanStack Start](https://tanstack.com/start/latest). It demonstrates how to quickly scaffold a project, set up routes, and manage application state efficiently.
+A comprehensive blackjack training web application built with modern web technologies. This application helps players improve their blackjack skills through various training modules and interactive features.
 
 ## Features
 
-- **Loader Data**: Fetch and display data using TanStack's route loader.
-- **Dynamic Updates**: Modify state and refresh loader data using `router.invalidate()`.
-- **Styled UI**: Includes a basic layout with responsive styles.
+- Basic Strategy Guide
+- Strategy Quiz System
+- Card Counting Tutorial
+- Card Counting Mini-Games
+- Interactive Blackjack Game
+  - Customizable starting bank
+  - Strategy hints
+  - Distraction training mode
+
+## Tech Stack
+
+- TanStack Router
+- TypeScript
+- TailwindCSS v4
+- Bun
+- React Query
+- HeadlessUI
+- HeroIcons
 
 ## Getting Started
 
-To start using this template, run the following command:
-
-```bash
-npx create-tanstack-app@latest --template tanstack-router
-```
-
-Follow the prompts to set up your project. The generated files include basic starter functionality from TanStack, so you can build on top of them or replace specific components with the code in this repository as needed.
-
-### Prerequisites
-
-Ensure you have the following installed:
-
-- [Node.js](https://nodejs.org/) (v16 or later recommended)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-
-### Installation
-
-1. Clone the repository or use the starter command above to create a new app.
-2. Navigate to the project directory:
+1. Install dependencies:
    ```bash
-   cd your-project-name
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
+   bun install
    ```
 
-### Running the App
+2. Start the development server:
+   ```bash
+   bun run dev
+   ```
 
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Visit [http://localhost:3000](http://localhost:3000) to view your application.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
 
-```plaintext
+```
 src/
-├── components/         # Reusable UI components
-├── routes/             # Application routes
-├── styles/             # Global and component-specific styles
-├── utils/              # Utility functions and helpers
-└── main.jsx            # Entry point for the React application
+├── components/     # Reusable UI components
+├── features/       # Feature-specific components and logic
+├── hooks/         # Custom React hooks
+├── lib/           # Utility functions and constants
+├── pages/         # Page components
+└── types/         # TypeScript type definitions
 ```
 
-## Customization
+## Contributing
 
-- Modify the `getCount` and `updateCount` functions in `src/functions/` to connect to your backend or API. Refer to the examples and guidelines provided on the [TanStack Start page](https://tanstack.com/start/latest) for best practices when integrating these functions.
-- Add additional routes in `src/routes/` as your application grows.
-
-## Learn More
-
-- [TanStack Router Documentation](https://tanstack.com/router/latest)
-- [React Documentation](https://reactjs.org/)
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the MIT License.
-
+MIT 
