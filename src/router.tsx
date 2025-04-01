@@ -1,4 +1,3 @@
-import React from 'react'
 import { createRootRoute, createRoute, createRouter } from '@tanstack/react-router'
 import { Layout } from './components/Layout'
 import { Home } from './routes/Home'
