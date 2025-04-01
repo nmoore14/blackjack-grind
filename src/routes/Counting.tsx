@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '../components/Button'
 import { Calculator, Brain, TrendingUp, ChevronDown, ChevronRight, Play } from 'lucide-react'

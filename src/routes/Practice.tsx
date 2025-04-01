@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Button } from '../components/Button'
 import { Timer, Play, RotateCcw, Check, X } from 'lucide-react'
 
@@ -44,7 +44,6 @@ export function Practice() {
     incorrectAnswers: 0,
     averageResponseTime: 0,
   })
-  const [lastResponseTime, setLastResponseTime] = useState<number | null>(null)
   const [cardStartTime, setCardStartTime] = useState<number | null>(null)
   const [gameOver, setGameOver] = useState(false)
 
@@ -107,7 +106,6 @@ export function Practice() {
 
       setRunningCount((prev) => prev + correctCount)
       setUserCount((prev) => prev + increment)
-      setLastResponseTime(responseTime)
       drawCard()
     }
 
@@ -161,7 +159,6 @@ export function Practice() {
 
     setRunningCount((prev) => prev + correctCount)
     setUserCount((prev) => prev + increment)
-    setLastResponseTime(responseTime)
     drawCard()
   }
 

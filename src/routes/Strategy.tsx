@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Button } from '../components/Button'
 import { ButtonGroup } from '../components/ButtonGroup'
-import { Table, ChevronDown, ChevronRight, Info } from 'lucide-react'
+import { Table, Info } from 'lucide-react'
 
 type HandType = 'hard' | 'soft' | 'pairs'
 type DealerCard = 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 // 11 represents Ace
-type PlayerHand = number | 'A' | string // string for pairs like "88"
 type Action = 'H' | 'S' | 'D' | 'P' | 'Rh' | 'Rs'
 
 const actionMap: Record<Action, string> = {

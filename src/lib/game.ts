@@ -178,7 +178,7 @@ function drawCard(deck: Card[]): [Card | undefined, Card[]] {
   return [card, newDeck]
 }
 
-export function splitHand(hand: Hand, deck: Card[]): [Hand, Hand] {
+export function splitHand(hand: Hand, deck: Card[]): [Hand, Hand, Card[]] {
   const card1 = hand.cards[0]
   const card2 = hand.cards[1]
   
@@ -192,6 +192,7 @@ export function splitHand(hand: Hand, deck: Card[]): [Hand, Hand] {
   return [
     calculateHandScore(createHandFromCards([card1, newCard1])),
     calculateHandScore(createHandFromCards([card2, newCard2])),
+    deck2
   ]
 }
 

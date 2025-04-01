@@ -1,6 +1,5 @@
-import React from 'react'
 import { Button } from '../components/Button'
-import { Wallet, TrendingUp, TrendingDown, Settings } from 'lucide-react'
+import { Settings } from 'lucide-react'
 import { useGameSettings, useSessionStats } from '../hooks/useGame'
 import { useNavigate } from '@tanstack/react-router'
 import { BlackjackGame } from '../components/BlackjackGame'

@@ -281,11 +281,11 @@ export function BlackjackGame() {
   const split = () => {
     const newDeck = [...gameState.deck]
     const currentHand = gameState.playerHands[gameState.activeHandIndex]
-    const [hand1, hand2] = splitHand(currentHand, newDeck)
+    const [hand1, hand2, updatedDeck] = splitHand(currentHand, newDeck)
 
     setGameState((prev) => ({
       ...prev,
-      deck: newDeck,
+      deck: updatedDeck,
       playerHands: [
         ...prev.playerHands.slice(0, prev.activeHandIndex),
         hand1,
@@ -465,7 +465,7 @@ export function BlackjackGame() {
                   </motion.div>
                 ) : (
                   <motion.div
-                    key={`dealer-hidden-${index}`}
+                    key={`dealer-hidden-${card.suit}-${card.rank}`}
                     className="w-24 h-36 rounded-lg border-2 border-primary bg-background flex items-center justify-center"
                   >
                     <span className="text-3xl text-primary">?</span>

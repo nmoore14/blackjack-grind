@@ -1,4 +1,3 @@
-import React from 'react'
 import { useNavigate } from '@tanstack/react-router'
 import { Button } from '../components/Button'
 import { useGameSettings, useUpdateGameSettings } from '../hooks/useGame'
@@ -6,7 +5,7 @@ import { useGameSettings, useUpdateGameSettings } from '../hooks/useGame'
 export function PlaySettings() {
   const navigate = useNavigate()
   const { data: settings, isLoading } = useGameSettings()
-  const { mutate: updateSettings, isPending } = useUpdateGameSettings()
+  const { mutate: updateSettings } = useUpdateGameSettings()
 
   const resetGame = () => {
     // Clear all game-related storage
